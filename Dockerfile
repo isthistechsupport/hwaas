@@ -3,6 +3,10 @@ FROM python:3.9.9-slim
 COPY requirements.txt /
 RUN pip3 install -r /requirements.txt
 
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 COPY . /app
 WORKDIR /app
 
